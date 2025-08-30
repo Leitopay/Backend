@@ -47,7 +47,7 @@ const io = new Server(httpServer);
 io.on('connection', socket => {
   console.log('Nuevo cliente conectado');
 
-  // Acá vas a escuchar y emitir eventos de productos
+  // Escuchar y emitir eventos de productos
   socket.on('nuevoProducto', data => {
     console.log('Producto recibido:', data);
     io.emit('actualizarProductos', data); // Actualiza a todos los clientes
